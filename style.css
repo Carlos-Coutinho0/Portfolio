@@ -17,6 +17,7 @@ main {
 }
 
 .pagina-inicial main {
+    width: min(100% - 32px, 400px);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,14 +53,24 @@ img {
     text-align: center;
 }
 
+.pagina-inicial .foto-perfil img {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #777777;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .pagina-inicial .foto-perfil h1 {
-    margin: 8px 0;
-    font-size: 1rem;
-    font-weight: 400;
+    margin: 8px 0 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .pagina-inicial .foto-perfil p {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
 }
 
 .navegacao {
@@ -69,17 +80,26 @@ img {
 }
 
 .navegacao a {
+    display: block;
     padding: 12px 16px;
     border: 1px solid #888888;
     border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.25);
     text-align: center;
     text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .navegacao a:hover,
 .navegacao a:focus-visible {
     background-color: rgba(255, 255, 255, 0.75);
+    border-color: #555555;
+}
+
+.pagina-inicial .navegacao a:focus-visible,
+.pagina-inicial .redes-sociais a:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 3px;
 }
 
 .pagina-inicial .redes-sociais {
@@ -88,8 +108,78 @@ img {
     margin-top: 32px;
 }
 
+.pagina-inicial .redes-sociais a {
+    text-decoration: none;
+}
+
+.pagina-inicial .redes-sociais a:hover {
+    text-decoration: underline;
+}
+
 .certificados {
     text-align: center;
+}
+
+.perfil {
+    text-align: center;
+}
+
+.perfil .foto-perfil img {
+    margin: 0 auto;
+}
+
+.perfil .foto-perfil h1 {
+    margin: 8px 0;
+    font-size: 1.25rem;
+}
+
+.perfil .foto-perfil p {
+    margin-bottom: 24px;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.redes-sociais img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.redes-sociais a {
+    text-decoration: none;
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+.sobre-mim {
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid rgba(80, 80, 80, 0.55);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.sobre-mim h2,
+.projetos > h2 {
+    margin-bottom: 16px;
+}
+
+.sobre-mim p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.projetos {
+    margin-top: 24px;
 }
 
 .lista-projetos {
@@ -99,6 +189,9 @@ img {
 }
 
 .card-projeto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 12px;
     border: 1px solid #888888;
     border-radius: 8px;
@@ -107,8 +200,22 @@ img {
 
 .conteudo-card {
     display: block;
+    width: 100%;
     color: inherit;
     text-decoration: none;
+}
+
+.conteudo-card:hover h3,
+.conteudo-card:focus-visible h3 {
+    text-decoration: underline;
+}
+
+.conteudo-card:focus-visible,
+.card-projeto > a:focus-visible,
+main > a:focus-visible,
+.detalhe-projeto a:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 3px;
 }
 
 .imagem-projeto {
@@ -124,9 +231,28 @@ img {
     object-position: top;
 }
 
-.imagem-projeto figcaption {
-    margin-top: 6px;
-    font-size: 0.85rem;
+.card-projeto h3 {
+    margin-bottom: 8px;
+}
+
+.card-projeto p {
+    line-height: 1.55;
+}
+
+.card-projeto > a:last-child,
+.detalhe-projeto section > a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.card-projeto > a:last-child:hover,
+.detalhe-projeto section > a:hover {
+    background-color: #ffffff;
 }
 
 .detalhe-projeto {
@@ -138,7 +264,8 @@ img {
 }
 
 .imagem-detalhe {
-    margin: 24px 0;
+    max-width: 640px;
+    margin: 24px auto;
 }
 
 .imagem-detalhe img {
@@ -147,6 +274,14 @@ img {
     height: auto;
     border: 1px solid #aaaaaa;
     border-radius: 4px;
+}
+
+.detalhe-projeto section {
+    line-height: 1.65;
+}
+
+.detalhe-projeto li {
+    margin-bottom: 8px;
 }
 
 .imagem-detalhe figcaption {
