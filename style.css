@@ -288,3 +288,57 @@ main > a:focus-visible,
     margin-top: 8px;
     font-size: 0.9rem;
 }
+
+@media (max-width: 700px) {
+    main {
+        padding: 32px 0;
+    }
+
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .detalhe-projeto {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: min(100% - 24px, 960px);
+        padding: 24px 0;
+    }
+
+    .pagina-inicial main {
+        width: min(100% - 24px, 400px);
+        padding: 24px 0;
+    }
+
+    .sobre-mim {
+        padding: 18px;
+    }
+
+    .card-projeto {
+        padding: 10px;
+    }
+
+    .imagem-projeto img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .detalhe-projeto {
+        padding: 14px;
+    }
+
+    .imagem-detalhe {
+        margin: 18px auto;
+    }
+
+    .redes-sociais a {
+        display: grid;
+        min-width: 44px;
+        min-height: 44px;
+        place-items: center;
+    }
+}
